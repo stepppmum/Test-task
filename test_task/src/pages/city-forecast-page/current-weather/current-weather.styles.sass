@@ -1,0 +1,77 @@
+@import '@styles'
+@import '@fontsource/nunito-sans/400.css'
+@import '@fontsource/nunito-sans/600.css'
+@import '@fontsource/nunito-sans/700.css'
+
+.current-weather
+    min-height: 100%
+    background-color: $primary
+    font-family: 'Nunito Sans'
+
+    &__town
+        position: fixed
+        top: 112px
+        left: 20px
+        color: $gray-100
+        text-align: left
+
+        h1
+            font-size: 20px
+            font-weight: 700
+            margin: 0
+
+    &__main
+        display: flex
+        position: fixed
+        top: 211px
+        left: 20px
+        align-items: center
+        justify-content: space-between
+        margin: 16px 0
+
+    &__details
+        display: grid
+        position: relative
+        top: 463px
+        left: 20px
+        width: 350px
+        grid-template-columns: 1fr 1fr
+        row-gap: 30px
+        column-gap: 10px
+        color: $gray-100
+
+        div
+            display: flex
+            justify-content: space-between
+            font-size: 14px
+            width: 160px
+            font-weight: 400
+            align-items: center
+
+            strong
+              font-weight: 700
+              font-size: 20px
+
+.main
+    &__icon
+        width: 200px
+
+    &__temp
+        margin-left: 10px
+        text-align: left
+
+    img
+        width: 200px
+
+.temp
+    &__actual-temp
+        color: $gray-100
+        font-size: 40px
+        font-weight: 600
+        height: 60px
+        margin: 0
+
+    &__feeling-temp
+        color: $gray-100
+        font-size: 14px
+        font-weight: 400

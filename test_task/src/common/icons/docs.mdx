@@ -1,0 +1,33 @@
+import { Meta, IconGallery, IconItem } from '@storybook/addon-docs';
+import * as icons from './index';
+
+<Meta title="Icons" />
+
+# Icons
+
+_Path:_ `@/common/icons/{icon-name}`
+
+Набор иконок
+
+<br/>
+
+<IconGallery>
+	{Object.entries( icons ).map(( [name, icon] ) => {
+		return (
+			<IconItem
+				key={name}
+				name={name}
+			>
+				{icon({})}
+			</IconItem>
+		);
+	})}
+</IconGallery>
+
+<br/>
+
+## Как использовать
+
+1. Все иконки имеют фиксированные размеры и не должны быть масштабируемы при обычных обстоятельствах.
+2. При необходимости вы можете настроить компонент как обычное SVG изображение, передавая пропсы SVG.
+3. Цвет иконки задается параметром `currentColor` (в большинстве случаев).

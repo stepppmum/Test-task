@@ -1,0 +1,122 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+button,
+textarea,
+blockquote,
+ul,
+li,
+fieldset,
+figure {
+	margin: 0;
+	padding: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+
+* {
+	touch-action: manipulation;
+	-ms-touch-action: manipulation;
+	-webkit-overflow-scrolling: touch;
+}
+
+a {
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+}
+
+button {
+	border: none;
+	background: transparent;
+	cursor: pointer;
+	color: inherit;
+	font: inherit;
+
+	&:disabled {
+		cursor: default;
+	}
+}
+
+input {
+	border: none;
+	box-shadow: inherit;
+	-webkit-box-shadow: inherit;
+
+	&[type='radio'],
+	&[type='checkbox'] {
+		cursor: pointer;
+	}
+
+	&[type='radio']:disabled,
+	&[type='checkbox']:disabled {
+		cursor: default;
+	}
+
+	&::placeholder {
+		opacity: 1; // для Firefox
+	}
+}
+
+fieldset {
+	width: auto;
+	border: none;
+}
+
+input,
+textarea,
+button,
+select,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (max-device-width: 998px) {
+	select,
+	textarea,
+	input,
+	input[type='tel'],
+	input:focus {
+		font-size: 16px;
+	}
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	margin: 0;
+	-webkit-appearance: none;
+	writing-mode: unset !important;
+	-webkit-writing-mode: unset !important;
+}
+
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+input[type=search]::-ms-clear,
+input[type=search]::-ms-reveal {
+	display: none;
+	width : 0;
+	height: 0;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+textarea {
+	border: none;
+	resize: none;
+}
+
+img {
+	display: block;
+}

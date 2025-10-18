@@ -1,0 +1,95 @@
+@import './variables.scss';
+
+/*=============================================
+=                 Media Query                 =
+=============================================*/
+
+@mixin hover {
+	@media (hover: hover) {
+		@content;
+	}
+}
+
+@mixin unsupported-hover {
+	@media (hover: none) {
+		@content;
+	}
+}
+
+@mixin coarse-pointer {
+	@media ((pointer: coarse) or (pointer: none)) {
+		@content;
+	}
+}
+
+
+@mixin desktop {
+	@media (min-width: ($tablet + 1px)) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: $tablet) and (min-width: ($mobile + 1px)) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media (max-width: $mobile) {
+		@content;
+	}
+}
+
+@mixin tablet-and-less {
+	@media (max-width: $tablet) {
+		@content;
+	}
+}
+
+@mixin tablet-and-more {
+	@media (min-width: ($mobile + 1px)) {
+		@content;
+	}
+}
+
+/*=============================================
+=                Base Element                 =
+=============================================*/
+
+@mixin disable-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+/*=============================================
+=                  Animation                  =
+=============================================*/
+
+@mixin media-transition($properties...) {
+	transition-duration: 0.2s;
+	transition-property: #{$properties};
+	transition-timing-function: ease-in-out;
+}
+
+
+/*=============================================
+=                    Useful                   =
+=============================================*/
+
+@mixin square($size) {
+	flex-shrink: 0;
+	width: $size;
+	height: $size;
+}
+
+@mixin circle($size) {
+	flex-shrink: 0;
+	width: $size;
+	height: $size;
+	border-radius: 50%;
+}

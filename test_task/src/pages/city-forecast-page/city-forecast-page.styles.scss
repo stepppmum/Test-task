@@ -1,0 +1,72 @@
+@import '@styles';
+
+.city-forecast-page {
+	display: flex;
+	align-items: stretch;
+	min-height: 100%;
+
+	@include desktop {
+		&__weather {
+			width: 620px;
+		}
+
+		&__forecast {
+			padding-top: 166px;
+		}
+
+		&__search {
+			top: 40px;
+			left: 620px + 100px;
+		}
+	}
+
+	@include tablet {
+		&__weather {
+			width: 390px;
+		}
+
+		&__forecast {
+			padding-top: 166px;
+		}
+
+		&__search {
+			top: 40px;
+			left: 390px + 30px;
+		}
+	}
+
+	@include mobile {
+		flex-direction: column;
+
+		&__weather {
+			max-width: 100%;
+		}
+
+		&__forecast {
+			position: fixed;
+			bottom: -182px;
+			z-index: 2;
+			width: 100%;
+		}
+
+		&__search {
+			top: 20px;
+			left: 20px;
+			width: calc(100% - 40px);
+		}
+	}
+
+	&__weather {
+		@include media-transition( width );
+	}
+
+	&__forecast {
+		flex-grow: 1;
+	}
+
+	&__search {
+		position: fixed;
+		width: 344px;
+		@include media-transition( left, top );
+	}
+}

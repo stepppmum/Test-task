@@ -1,0 +1,44 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs';
+import variables from './export/colors';
+import { groupColors } from './utils/group-colors';
+export const colors = groupColors( variables, [
+	'gray',
+] );
+
+<Meta title="Colors" />
+
+# Colors
+
+_Path:_ `@/common/styles/colors.scss`
+
+Набор цветов
+
+> Если вы **изменили имена** переменных, **удалили** старые или **добавили** новые, вам необходимо изменить файл `common/styles/export/colors.module.scss` или автоматически его **сгенерировать**. Для этого запустите скрипт:
+> ``` bash
+> node src/common/styles/docs/scripts/generate-colors.cjs
+> ```
+
+<ColorPalette>
+	{colors.other
+		.map( ( [name, value] ) => (
+			<ColorItem
+				title={name}
+				key={name}
+				colors={{
+					[`$${name}`]: value,
+				}}
+			/>
+	) )}
+	<ColorItem
+		title="gray"
+		colors={
+			Object.fromEntries(
+				colors.gray
+					.map( ( color ) => ( [
+						`$${color[0]}`,
+						color[1]
+					] ) )
+			)
+		}
+	/>
+</ColorPalette>
